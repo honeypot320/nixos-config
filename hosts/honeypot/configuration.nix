@@ -58,7 +58,6 @@
      git
      fastfetch
      htop
-     kitty
      firefox
      brightnessctl
   ];

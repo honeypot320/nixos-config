@@ -16,6 +16,9 @@
       modules = [
         ./hosts/honeypot/configuration.nix
 
+	./modules/shells
+	./modules/terminals
+
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.users.honeypot = import ./home/honeypot/home.nix;
