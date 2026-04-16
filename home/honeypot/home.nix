@@ -12,7 +12,10 @@
     enable = true;
     defaultEditor = true;
 
-    extraLuaConfig = ''
+    withPython3 = true;
+    withRuby = true;
+
+    initLua = ''
       vim.g.mapleader = " "
 
       vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
