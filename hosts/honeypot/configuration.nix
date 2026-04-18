@@ -10,4 +10,12 @@
       ./hardware-configuration.nix
       ../../modules/system
     ];
+
+    
+  users.users.honeypot = {
+    isNormalUser = true;
+    description = "honeypot";
+    extraGroups = [ "wheel" "networkmanager" ];
+    home = "/home/honeypot";
+  };
 }
