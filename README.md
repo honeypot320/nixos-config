@@ -11,3 +11,8 @@
 │ └── honeypot/
 │ └── home.nix
 ```
+
+# Philosophy
+```
+Everything has its own purpose
+```
