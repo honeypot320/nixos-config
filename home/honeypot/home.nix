@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  import = [
+  imports = [
     ../../modules/home/editors
-  ]
+  ];
   
   home.username = "honeypot";
   home.homeDirectory = "/home/honeypot";
