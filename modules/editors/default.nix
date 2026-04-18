@@ -38,6 +38,7 @@
         vim.opt.scrolloff = 10
 
         vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
+	vim.keymap.set("n", "<leader>d", "ggdG")
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
