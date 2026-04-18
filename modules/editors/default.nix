@@ -54,11 +54,11 @@
         ];
       };
     };
-
-    extraPackages = with pkgs; [
-      ripgrep
-      fd
-      gcc
-    ];
   };
+
+  environment.systemPackages = with pkgs; [
+    ripgrep
+    fd
+    gcc
+  ];
 }
