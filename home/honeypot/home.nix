@@ -12,6 +12,7 @@
     waybar
     mako
     firefox
+    fastfetch
 
     ripgrep
     fd
