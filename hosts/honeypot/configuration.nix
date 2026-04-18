@@ -61,6 +61,7 @@
      btop
      firefox
      awww
+     fuzzel
      brightnessctl
   ];
 
