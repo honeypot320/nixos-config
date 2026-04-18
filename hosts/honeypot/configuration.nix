@@ -60,7 +60,7 @@
      fastfetch
      btop
      firefox
-     swww
+     awww
      brightnessctl
   ];
 
