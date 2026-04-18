@@ -55,10 +55,4 @@
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    ripgrep
-    fd
-    gcc
-  ];
 }

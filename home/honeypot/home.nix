@@ -16,6 +16,10 @@
     waybar
     mako
     firefox
+
+    ripgrep
+    fd
+    gcc
   ];
 
   programs.git.enable = true;
