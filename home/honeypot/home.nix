@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/home/editors
+    ../../modules/editors
   ];
   
   home.username = "honeypot";
