@@ -18,6 +18,7 @@
 
 	./modules/shells
 	./modules/terminals
+	./modules/editors
 
 	home-manager.nixosModules.home-manager
 	{
