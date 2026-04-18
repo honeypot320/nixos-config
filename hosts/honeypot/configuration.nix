@@ -58,8 +58,9 @@
      neovim
      git
      fastfetch
-     htop
+     btop
      firefox
+     swww
      brightnessctl
   ];
 
