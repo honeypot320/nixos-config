@@ -69,6 +69,16 @@
 
   programs.niri.enable = true;
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd ${pkgs.niri}/bin/niri";
+        user = "greeter";
+      };
+    };
+  };
+
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
