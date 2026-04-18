@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/system
+      ../modules/editors
+      ../modules/shells
     ];
 
   users.users.honeypot = {

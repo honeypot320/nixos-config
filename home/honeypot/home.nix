@@ -15,6 +15,7 @@
     fuzzel
     waybar
     mako
+    firefox
   ];
 
   programs.git.enable = true;

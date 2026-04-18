@@ -17,6 +17,11 @@
       gcc
     ];
 
+    plugins = with pkgs.vimPlugins; [
+      plenary-nvim
+      telescope-nvim
+    ];
+
     extraLuaConfig = ''
       vim.g.mapleader = " "
       vim.g.maplocalleader = " "
@@ -41,12 +46,13 @@
       vim.opt.cursorline = true
       vim.opt.scrolloff = 10
 
-      vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+      vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
 
+      local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+      vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
     '';
-
-    plugins = with pkgs.vimPlugins; [
-      telescope-nvim
-    ];
   };
 }
