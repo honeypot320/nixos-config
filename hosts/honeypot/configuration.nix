@@ -11,11 +11,12 @@
       ../../modules/system
     ];
 
-    
   users.users.honeypot = {
     isNormalUser = true;
     description = "honeypot";
     extraGroups = [ "wheel" "networkmanager" ];
     home = "/home/honeypot";
   };
+
+  programs.niri.enable = true;
 }

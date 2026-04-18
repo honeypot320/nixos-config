@@ -10,7 +10,13 @@
 
   home.stateVersion = "25.11";
 
+  home.packages = with pkgs; [
+    kitty
+    fuzzel
+    waybar
+    mako
+  ];
+
   programs.git.enable = true;
- 
   programs.home-manager.enable = true;
 }
