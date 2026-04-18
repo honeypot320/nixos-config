@@ -1,18 +1,26 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   environment.shells = with pkgs; [
     fish
   ];
 
-  
   programs = {
-    fish.enable = true;
-    command-not-found.enable = false; # Required for fish
-  };
+    fish = {
+      enable = true;
+      shellAliases = {
+        gs = "git status";
+        ns = "sudo nixos-rebuild switch --flake /etc/nixos#honeypot";
+      };
+      interactiveShellInit = ''
+        set -g fish_greeting
+      '';
+    };
 
-  programs.nix-index = {
-    enable = true;
-    enableFishIntegration = true;
+    command-not-found.enable = false;
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 }

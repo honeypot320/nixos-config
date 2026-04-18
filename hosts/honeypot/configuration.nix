@@ -16,6 +16,7 @@
     description = "honeypot";
     extraGroups = [ "wheel" "networkmanager" ];
     home = "/home/honeypot";
+    shell = pkgs.fish;
   };
 
   programs.niri.enable = true;
