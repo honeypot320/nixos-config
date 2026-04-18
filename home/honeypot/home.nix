@@ -7,7 +7,6 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    kitty
     fuzzel
     waybar
     mako
