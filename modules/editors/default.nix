@@ -83,6 +83,27 @@
       };
     };
 
+      plugins.lualine = {
+    enable = true;
+
+    settings = {
+      options = {
+        theme = "auto";
+        globalstatus = true; # 1 bar onderaan (zoals moderne setups)
+      };
+
+     sections = {
+       lualine_a = [ "mode" ];
+       lualine_b = [ "branch" "diff" ];
+       lualine_c = [ "filename" ];
+
+       lualine_x = [ "encoding" "filetype" ];
+       lualine_y = [ "progress" ];
+       lualine_z = [ "location" ];
+      };
+    };
+  };
+
     colorschemes.nightfox = {
       enable = true;
       settings = {
