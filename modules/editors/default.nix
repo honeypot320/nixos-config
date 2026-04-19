@@ -1,59 +1,86 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
 
-    withNodeJs = true;
-    withPython3 = true;
-    withRuby = false;
+    globals.mapleader = " ";
+    globals.maplocalleader = " ";
 
-    configure = {
-      customRC = ''
-lua << EOF
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.showmode = false
-vim.opt.clipboard = "unnamedplus"
-vim.opt.breakindent = true
-vim.opt.undofile = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.inccommand = "split"
-vim.opt.cursorline = true
-vim.opt.scrolloff = 10
-
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>", { desc = "Open netrw" })
-vim.keymap.set("n", "<leader>d", "ggdG", { desc = "Delete whole file" })
-
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
-EOF
-      '';
-
-      packages.myPlugins = with pkgs.vimPlugins; {
-        start = [
-          plenary-nvim
-          telescope-nvim
-        ];
+    opts = {
+      number = true;
+      relativenumber = true;
+      mouse = "a";
+      showmode = false;
+      clipboard = "unnamedplus";
+      breakindent = true;
+      undofile = true;
+      ignorecase = true;
+      smartcase = true;
+      signcolumn = "yes";
+      updatetime = 250;
+      timeoutlen = 300;
+      splitright = true;
+      splitbelow = true;
+      list = true;
+      listchars = {
+        tab = "» ";
+        trail = "·";
+        nbsp = "␣";
       };
+      inccommand = "split";
+      cursorline = true;
+      scrolloff = 10;
     };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>pv";
+        action = "<cmd>Ex<CR>";
+        options.desc = "Open netrw";
+      }
+      {
+        mode = "n";
+        key = "<leader>d";
+        action = "ggdG";
+        options.desc = "Delete whole file";
+      }
+      {
+        mode = "n";
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files<CR>";
+        options.desc = "Find files";
+      }
+      {
+        mode = "n";
+        key = "<leader>fg";
+        action = "<cmd>Telescope live_grep<CR>";
+        options.desc = "Live grep";
+      }
+      {
+        mode = "n";
+        key = "<leader>fb";
+        action = "<cmd>Telescope buffers<CR>";
+        options.desc = "Buffers";
+      }
+      {
+        mode = "n";
+        key = "<leader>fh";
+        action = "<cmd>Telescope help_tags<CR>";
+        options.desc = "Help tags";
+      }
+    ];
+
+    plugins.telescope.enable = true;
+
+    extraPackages = with pkgs; [
+      nodejs
+      python3
+      ripgrep
+    ];
   };
 }
