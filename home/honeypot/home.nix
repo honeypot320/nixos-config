@@ -12,6 +12,9 @@
     mako
     firefox
     fastfetch
+    vesktop
+    xwayland-satellite
+    htop
 
     ripgrep
     fd

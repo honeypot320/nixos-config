@@ -75,6 +75,7 @@
     plugins.telescope.enable = true;
     plugins.oil.enable = true;
     plugins.web-devicons.enable = true;
+    plugins.cord-nvim.enable = true;
 
     plugins.treesitter = {
       enable = true;
