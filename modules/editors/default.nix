@@ -40,8 +40,8 @@
       {
         mode = "n";
         key = "<leader>pv";
-        action = "<cmd>Ex<CR>";
-        options.desc = "Open netrw";
+        action = "<cmd>Oil<CR>";
+        options.desc = "Open file explorer";
       }
       {
         mode = "n";
@@ -76,6 +76,15 @@
     ];
 
     plugins.telescope.enable = true;
+    plugins.oil.enable = true;
+
+    treesitter = {
+      enable = true;
+      settings = {
+        highlight.enable = true;
+        indent.enable = true;
+     };
+    };
 
     extraPackages = with pkgs; [
       nodejs
