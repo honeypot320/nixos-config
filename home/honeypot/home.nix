@@ -14,7 +14,7 @@
     fastfetch
     vesktop
     xwayland-satellite
-    htop
+    btop
 
     ripgrep
     fd
