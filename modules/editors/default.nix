@@ -26,14 +26,11 @@
       splitright = true;
       splitbelow = true;
       list = true;
-      listchars = {
-        tab = "» ";
-        trail = "·";
-        nbsp = "␣";
-      };
+      listchars = "tab:» ,trail:·,nbsp:␣";
       inccommand = "split";
       cursorline = true;
       scrolloff = 10;
+      background = "dark";
     };
 
     keymaps = [
@@ -46,7 +43,7 @@
       {
         mode = "n";
         key = "<leader>d";
-        action = "ggdG";
+        action = "<cmd>%delete<CR>";
         options.desc = "Delete whole file";
       }
       {
@@ -78,13 +75,24 @@
     plugins.telescope.enable = true;
     plugins.oil.enable = true;
 
-    treesitter = {
+    plugins.treesitter = {
       enable = true;
       settings = {
         highlight.enable = true;
         indent.enable = true;
-     };
+      };
     };
+
+    colorschemes.nightfox = {
+      enable = true;
+      settings = {
+        options = {
+          transparent = false;
+        };
+      };
+    };
+
+    colorscheme = "carbonfox";
 
     extraPackages = with pkgs; [
       nodejs
